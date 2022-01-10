@@ -2,10 +2,10 @@
 date_default_timezone_get("Asia/Jakarta");
 
 require 'functions.php';
-// mengambil id yang di kirim
 $id = $_GET['id'];
 $camaba = query("SELECT * FROM calon_mhs WHERE id=$id");
-// var_dump($camaba[0]);
+// var_dump($camaba[0]['nama']);
+
 ?>
 
 
@@ -56,11 +56,11 @@ $camaba = query("SELECT * FROM calon_mhs WHERE id=$id");
           <hr class="bg-dark">
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#"><i class="fas fa-users"></i> calon Mahasiswa</a>
+          <a class="nav-link text-white" href="index.php"><i class="fas fa-users"></i> calon Mahasiswa</a>
           <hr>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#"><i class="fas fa-user-edit"></i> Input camaba</a>
+          <a class="nav-link text-white" href="tambah.php"><i class="fas fa-user-edit"></i> Input camaba</a>
           <hr>
         </li>
         <li class="nav-item">
@@ -76,24 +76,22 @@ $camaba = query("SELECT * FROM calon_mhs WHERE id=$id");
     </div>
     <div class="col-md-10 p-5 pt-5">
       <!-- konten -->
-      <h3><i class="fas fa-users"></i> Detail Calon Mahasiswa</h3>
+      <h3><i class="fas fa-users"></i> Detail data Calon Mahasiswa</h3>
       <hr>
 
       <ul class="list-group">
         <li class="list-group-item active"><?= $camaba['nama']; ?></li>
         <li class="list-group-item">alamat : <?= $camaba['alamat']; ?></li>
-        <li class="list-group-item">jenis Kelamin : <?= $camaba['jenis_kelamin']; ?></li>
+        <li class="list-group-item">jenis kelamin : <?= $camaba['jenis_kelamin']; ?></li>
         <li class="list-group-item">agama : <?= $camaba['agama']; ?></li>
-        <li class="list-group-item">Sekolah Asal : <?= $camaba['sekolah_asal']; ?></li>
+        <li class="list-group-item">sekolah asal : <?= $camaba['sekolah_asal']; ?></li>
         <li class="list-group-item"><img src="image/<?= $camaba['foto_maba']; ?>" alt=""></li>
         <li class="list-group-item">
-          <a href="hapus.php?id=<?= $cmb['id']; ?>" class="btn btn-danger" role="button" aria-pressed="true">hapus</a> |
-          <a href="edit.php?id=<?= $cmb['id']; ?>" class="btn btn-warning" role="button" aria-pressed="true">edit</a> |
-          <a href="index.php" class="btn btn-primary" role="button" aria-pressed="true">kembali</a>
+          <a href="edit.php?id=<?= $cmb['id']; ?>" class="btn btn-warning" role="button">Edit</a> |
+          <a href="hapus.php?id=<?= $cmb['id']; ?>" class="btn btn-danger" role="button">Hapus</a> |
+          <a href="index.php" class="btn btn-primary" role="button">Kembali</a>
         </li>
       </ul>
-
-
     </div>
   </div>
 

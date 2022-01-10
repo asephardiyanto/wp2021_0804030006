@@ -3,6 +3,7 @@ date_default_timezone_get("Asia/Jakarta");
 
 require 'functions.php';
 $camaba = query("SELECT * FROM calon_mhs");
+
 ?>
 
 
@@ -53,11 +54,11 @@ $camaba = query("SELECT * FROM calon_mhs");
           <hr class="bg-dark">
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#"><i class="fas fa-users"></i> calon Mahasiswa</a>
+          <a class="nav-link text-white" href="index.php"><i class="fas fa-users"></i> calon Mahasiswa</a>
           <hr>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#"><i class="fas fa-user-edit"></i> Input camaba</a>
+          <a class="nav-link text-white" href="tambah.php"><i class="fas fa-user-edit"></i> Input camaba</a>
           <hr>
         </li>
         <li class="nav-item">
@@ -91,8 +92,8 @@ $camaba = query("SELECT * FROM calon_mhs");
             <tr>
               <th scope="row"><?php echo $no; ?></th>
               <td><?php echo $cmb['nama']; ?></td>
-              <td><img src="image/foto1.png" width="100px"></td>
-              <td><a href="detail.php?id=<?= $cmb['id']; ?>" class="btn btn-warning" role="button" aria-pressed="true">detail</a></td>
+              <td><img src="image/<?php echo $cmb['foto_maba']; ?>" width="100px"></td>
+              <td><a href="detail.php?id=<?= $cmb['id']; ?>" class="btn btn-warning" role="button">detail</a></td>
             </tr>
             <?php $no++ ?>
           <?php endforeach ?>
