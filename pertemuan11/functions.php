@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'wpsmt5');
+$conn = mysqli_connect('localhost', 'root', 'root', 'wpsmt5');
 
 // pemanggilan tabel
 function query($query)
